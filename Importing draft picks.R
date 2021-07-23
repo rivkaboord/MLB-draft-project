@@ -1,207 +1,261 @@
+# MLB DRAFT AND PROSPECT DATA ANALYSIS ----
+
+# load libraries
+library(tidyverse)
 library(readxl)
 library(writexl)
-
-#importing data on each pick in the first round of the MLB draft
-
-pick1 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick1.xlsx')
-pick2 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick2.xlsx')
-pick3 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick3.xlsx')
-pick4 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick4.xlsx')
-pick5 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick5.xlsx')
-pick6 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick6.xlsx')
-pick7 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick7.xlsx')
-pick8 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick8.xlsx')
-pick9 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick9.xlsx')
-pick10 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick10.xlsx')
-pick11 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick11.xlsx')
-pick12 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick12.xlsx')
-pick13 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick13.xlsx')
-pick14 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick14.xlsx')
-pick15 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick15.xlsx')
-pick16 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick16.xlsx')
-pick17 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick17.xlsx')
-pick18 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick18.xlsx')
-pick19 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick19.xlsx')
-pick20 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick20.xlsx')
-pick21 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick21.xlsx')
-pick22 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick22.xlsx')
-pick23 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick23.xlsx')
-pick24 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick24.xlsx')
-pick25 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick25.xlsx')
-pick26 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick26.xlsx')
-pick27 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick27.xlsx')
-pick28 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick28.xlsx')
-pick29 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick29.xlsx')
-pick30 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick30.xlsx')
-pick31 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick31.xlsx')
-pick32 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick32.xlsx')
-pick33 <- read_xlsx(path = '~/Programming and Data Science/R/MLB Draft/Draft Excel Files/pick33.xlsx')
-
-library(dplyr)
-library(magrittr)
-
-#Cleaning data to remove extraneous columns using select and rename RdPck column for clarity
-
-pick1 <- select(pick1, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick2 <- select(pick2, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick3 <- select(pick3, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick4 <- select(pick4, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick5 <- select(pick5, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick6 <- select(pick6, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick7 <- select(pick7, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick8 <- select(pick8, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick9 <- select(pick9, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick10 <- select(pick10, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick11 <- select(pick11, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick12 <- select(pick12, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick13 <- select(pick13, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick14 <- select(pick14, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick15 <- select(pick15, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick16 <- select(pick16, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick17 <- select(pick17, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick18 <- select(pick18, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick19 <- select(pick19, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick20 <- select(pick20, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick21 <- select(pick21, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick22 <- select(pick22, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick23 <- select(pick23, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick24 <- select(pick24, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick25 <- select(pick25, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick26 <- select(pick26, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick27 <- select(pick27, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick28 <- select(pick28, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick29 <- select(pick29, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick30 <- select(pick30, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick31 <- select(pick31, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick32 <- select(pick32, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-pick33 <- select(pick33, -DT, -FrRnd, -Bonus, -Type, -"Drafted Out of") %>% 
-    rename(PickNo = RdPck)
-
-library(tidyr)
 library(stringr)
+library(ggplot2)
+library(tidyquant)
+library(data.table)
+library(plotly)
+library(Lahman)
 
-pick1$Name <- pick1$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick2$Name <- pick2$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick3$Name <- pick3$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick4$Name <- pick4$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick5$Name <- pick5$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick6$Name <- pick6$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick7$Name <- pick7$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick8$Name <- pick8$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick9$Name <- pick9$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick10$Name <- pick10$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick11$Name <- pick11$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick12$Name <- pick12$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick13$Name <- pick13$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick14$Name <- pick14$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick15$Name <- pick15$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick16$Name <- pick16$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick17$Name <- pick17$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick18$Name <- pick18$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick19$Name <- pick19$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick20$Name <- pick20$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick21$Name <- pick21$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick22$Name <- pick22$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick23$Name <- pick23$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick24$Name <- pick24$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick25$Name <- pick25$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick26$Name <- pick26$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick27$Name <- pick27$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick28$Name <- pick28$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick29$Name <- pick29$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick30$Name <- pick30$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick31$Name <- pick31$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick32$Name <- pick32$Name %>% 
-    str_remove("\\s\\(minors\\)")
-pick33$Name <- pick33$Name %>% 
-    str_remove("\\s\\(minors\\)")
+## 1. Analyze some data from first round picks since 1965 ----
 
-# Clean a couple of columns with erroneous NAs, change column type to numeric
-pick7$Rnd = 1
-pick10$Rnd = 1
-pick11$Rnd = 1
-pick12$Rnd = 1
-pick13$Rnd = 1
-pick14$Rnd = 1
-pick15$Rnd = 1
-pick16$Rnd = 1
-pick17$Rnd = 1
-pick18$Rnd = 1
-pick19$Rnd = 1
-pick20$Rnd = 1
-pick27$Rnd = 1
-pick28$Rnd = 1
-pick29$Rnd = 1
-pick30$Rnd = 1
-pick31$Rnd = 1
-pick32$Rnd <- str_replace(pick32$Rnd,"s","")
-as.numeric(pick32$Rnd)
+# 1A. Batch import data from first round of MLB draft ----
+first_round_picks_excel_files <- "Draft Excel files/"
 
-# Remove second-round picks who were picked at 31 or later, since draft position is mixed between Rounds 1 and 2
+file.list <- list.files(path = first_round_picks_excel_files, pattern = "*.xlsx", full.names = T)
+df.list <- lapply(file.list, read_excel)
+first_round_picks <- rbindlist(df.list, idcol = "id")
 
-pick31 <- pick31[pick31$Rnd == 1,]
-pick32 <- pick32[pick32$Rnd == 1,]
-pick33 <- pick33[pick33$Rnd == 1,]
+# 1B. Clean the imported first round pick data ----
+first_round_picks_cleaned_df <- first_round_picks %>% 
+    select(-DT, -FrRnd, -"Drafted Out of", -Bonus, -id, -Type) %>% 
+    rename(PickNo = RdPck) %>% 
+    filter(Rnd == 1) %>%
+    mutate(Rnd = str_replace(Rnd,"s","")) %>% 
+    mutate(Name = str_remove(Name,"\\s\\(minors\\)"))
+
+# Remove unneeded variables
+rm(file.list)
+rm(df.list)
+rm(first_round_picks)
+
+# 1C. create a new WAR tibble ----
+first_round_war_df <- 
+    first_round_picks_cleaned_df %>% 
+    select(Name, Year, Rnd, PickNo, WAR) %>% 
+    arrange(desc(WAR)) %>% 
+    mutate_at(., c("WAR"), ~replace(., is.na(.), 0.01))
+
+# 1D. mean and median WAR for each pick number ----
+war_avg_by_pick_df <- first_round_war_df %>% 
+    select(PickNo, WAR) %>% 
+    group_by(PickNo) %>% 
+    summarise(WAR_med = median(WAR),
+              WAR_mean = mean(WAR)) %>% 
+    mutate(label_text = str_glue("Pick: {PickNo}
+                                 WAR: {WAR_med %>% round()}")) %>% 
+    ungroup()
+
+# 1E. lineplot depicting the average WAR for each pick number ----
+war_med_lineplot <- war_avg_by_pick_df %>% 
+    
+    ggplot(aes(PickNo, WAR_med)) +
+    geom_line(size = 1) +
+    geom_point(aes(text = label_text), color = "#1c8e20", size = 3) +
+    
+    theme_tq() +
+  
+    labs(title = "Average WAR Produced By Each Draft Position", align = "center",
+         subtitle = "A steep drop from Pick 1 to Pick 3 and a consistent dropoff from there", 
+        x = "Pick",
+        y = "Median WAR Produced")
+
+# 1F. interactive lineplot ----
+war_med_lineplot_interactive <- 
+  war_med_lineplot %>% ggplotly(tooltip = "text")
+
+## 2. Analyze Baseball America prospect data from 1990-2020 ----
+
+# 2A. read in Excel files for prospect list ----
+path = "BA Prospects 1990-2021.xlsx"
+prospect_data_df <- excel_sheets(path = path) %>% 
+    map(~ as.data.frame(read_excel(path, sheet = .,
+                                   col_types = c("numeric", "text", "guess", "text", "text", "text", "text", "text",
+                                                 "text", "date", "text", "text", "text", "text", "text", "text"))))
+
+# 2B. function to pull and clean data from big list ----
+pull_df_fn <- function(data, year) {
+    data %>%
+        filter_all(any_vars(!is.na(.))) %>% 
+        mutate(year = year) %>% 
+        select(year, everything())
+}
+
+# 2C. combine data into one large dataframe ----
+combine_prospect_df <- map2_df(prospect_data_df, 1990:2020, pull_df_fn) %>% 
+    separate(col = `Draft Info`, into = c("year_picked", "round_picked", "pickNo", "team_picked"), sep = "-") %>%
+    rename("player_name" = `Player Name`,
+           "team_name" = `Team Name`,
+           "team_rank" = `Team Rank`,
+           "born_date" = `Born Date`,
+           "birthplace" = `Place Of Birth`,
+           "mlb_years" = `MLB Years`,
+           "stat_years" = `Stat Years`,
+           "other_rankings" = `Other Rankings this Year`) %>% 
+    mutate(team_rank = as.numeric(team_rank)) %>% suppressWarnings() %>% 
+    mutate(player_name = as.character(player_name))
+
+combine_prospect_df_cleaned <- combine_prospect_df %>%
+    select(-Ht, -Wt, -Ba, -Th, -birthplace, -mlb_years, -stat_years, -other_rankings) %>% 
+    separate(col = `born_date`, into = c("birthYear", "birthMonth", "birthDay"), sep = "-") %>% 
+    mutate("birthDay" = as.integer(birthDay),
+           "birthMonth" = as.integer(birthMonth),
+           "birthYear" = as.integer(birthYear))
+
+# 2D. making sure we have players' full names and IDs to make it easier to join to prospect data ----
+names_and_ids_df <- People %>% 
+    unite(nameFirst, nameLast, col = "player_name", sep = " ") %>% 
+    select(playerID, player_name, birthYear, birthMonth, birthDay, everything())
+
+# 2E. join prospect data with their player IDs (+ height/weight and batting info in R-friendly format) ----
+prospects_majors_since_1990_df <- combine_prospect_df_cleaned %>% 
+    left_join(names_and_ids_df, c("player_name", "birthMonth", "birthYear")) %>% 
+    select(year, playerID, player_name, Rk, team_name, team_rank, Pos, year_picked, round_picked, pickNo, team_picked, height, weight, bats, throws)
+
+## 3. Analyze career WAR of top prospects since 1990 by combining prospects' names with their career stats ----
+
+# 3A. adding WAR batting statistics to the Lahman database and then to batting prospects ----
+lahman_batters_with_war_df <- read.csv("lahman_db_with_bbrefid_batters.csv") %>% 
+    rename("playerID" = player_ID) %>% 
+    select(playerID, WAR) %>% 
+    group_by(playerID) %>% 
+    summarize(career_WAR = round(sum(WAR), 1))
+
+prospects_1990_war_batters_df <- prospects_majors_since_1990_df %>% 
+    inner_join(lahman_batters_with_war_df, c("playerID")) %>% 
+    filter(Pos != "P")
+
+# 3B. adding WAR pitching statistics to Lahman database and then to pitching prospects ----
+lahman_pitchers_with_war_df <- read.csv("lahman_db_with_bbrefid_pitchers.csv") %>% 
+  select(playerID, WAR) %>% 
+  group_by(playerID) %>% 
+  summarize(career_WAR = round(sum(WAR), 1))
+
+prospects_1990_war_pitchers_df <- prospects_majors_since_1990_df %>% 
+  inner_join(lahman_pitchers_with_war_df, c("playerID")) %>% 
+  filter(Pos == "P")
+
+# 3C. filtering out prospects who never made the majors ----
+never_made_majors_1990_df <- prospects_majors_since_1990_df %>% 
+  filter(is.na(playerID))
+
+# 3D. join together batters and pitchers ----
+prospects_1990_war_full_df <- prospects_1990_war_batters_df %>% 
+  full_join(prospects_1990_war_pitchers_df) %>% 
+  mutate(Rk = as.factor(Rk)) %>% 
+  arrange(year, Rk)
+
+# 3E. aggregate mean, median, stdev, and var of WAR ----
+prospects_averages_df <- prospects_1990_war_full_df %>% 
+  select(Rk, career_WAR) %>% 
+  mutate(career_WAR = na.fill0(career_WAR, fill = 0)) %>% 
+  group_by(Rk) %>% 
+  summarize(sum_war = round(sum(career_WAR), 2),
+            mean_war = round(mean(career_WAR), 2),
+            med_war = round(median(career_WAR), 2),
+            var_war = round(var(career_WAR), 2),
+            stdv_war = round(StdDev(career_WAR), 2)
+            ) %>% 
+  ungroup()
+
+# 3F. scatterplot of median WAR data for prospects ----
+top_prospects_career_war_scatterplot <- prospects_averages_df %>% 
+  select(Rk, med_war) %>% 
+  ggplot(aes(Rk, med_war)) +
+  geom_point() +
+  theme_tq() +
+  theme(axis.text.x = element_blank()) +
+  labs(title = "Top Prospect Position and Career WAR",
+       x = "Prospect Ranking",
+       y = "Median Career WAR") +
+  theme(title = element_text(face = "bold"))
+
+# 3G. Kmeans and UMAP ----
+
+# kmeans_obj <- prospects_averages_df %>% 
+#   select(med_war) %>% 
+#   kmeans(centers = 4, nstart = 100)
+# 
+# broom::tidy(kmeans_obj) %>% 
+#   glimpse()
+# 
+# broom::augment(kmeans_obj, prospects_averages_df) %>% 
+#   select(Rk, .cluster)
+# 
+# center <- 3
+# 
+# kmeans_mapper <- function(centers = 3) {
+#   
+#   prospects_averages_df %>% 
+#     select(med_war) %>% 
+#     kmeans(centers = center, nstart = 100)
+# }
+# 
+# kmeans_mapped_tbl <- tibble(centers = 1:15) %>% 
+#   mutate(k_means = centers %>% map(kmeans_mapper)) %>% 
+#   mutate(glance = k_means %>% map(broom::glance))
+# 
+# 
+# kmeans_mapped_tbl %>% 
+#   unnest(glance) %>% 
+#   select(centers, tot.withinss)
+# 
+# kmeans_mapped_tbl %>% 
+#   unnest(glance) %>% 
+#   select(centers, tot.withinss) %>% 
+#   
+#   # Visualization
+#   
+#   ggplot(aes(centers, tot.withinss)) +
+#   geom_point(color = "#2c3e50", size = 4) +
+#   geom_line(color = "#2c3e50", size = 1) +
+#   ggrepel::geom_label_repel(aes(label = centers), color = "#2c3e50") +
+#   
+#   # Formatting
+#   theme_tq()
+# 
+# library(umap)
+# 
+# umap_obj <- prospects_averages_df %>% 
+#   select(med_war) %>% 
+#   umap()
+# 
+# umap_results_tbl <- umap_obj$layout %>% 
+#   as_tibble() %>% 
+#   set_names(c("x", "y")) %>% 
+#   bind_cols(
+#     prospects_averages_df %>% select(Rk)
+#   )
+# 
+# umap_results_tbl %>% 
+#   
+#   ggplot(aes(x,y)) +
+#   geom_point() +
+#   geom_label_repel(aes(label = Rk), size = 2.5)
+
+## 4. Possible analysis of all players to compare to top prospects; should remove top prospects from data ----
+
+# 4A. mean of all players in MLB history WAR ----
+lahman_all_players_war_df <- lahman_batters_with_war_df %>% 
+  full_join(lahman_pitchers_with_war_df) %>% 
+  na.omit(career_WAR)
+
+lahman_all_players_war_df$career_WAR %>% mean() %>% round(digits = 1)
+
+lahman_all_players_war_df %>% 
+  arrange(desc(career_WAR))
+
+## 5. Comparing top prospects' career data to All Stars' - in other words, a proven player ----
+
+# 5A. All Stars' mean and median career WAR
+all_all_star_app_df <- Lahman::AllstarFull %>% 
+  group_by(playerID) %>% 
+  count() %>% 
+  inner_join(lahman_all_players_war_df, c("playerID")) %>% 
+  na.omit(career_WAR)
+
+all_all_star_app_df$career_WAR %>% median() %>% round(1)
